@@ -16,7 +16,7 @@ const { createServer } = require("http")
 
 // ========== Declare Variable ========== 
 const app = express()
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 const DB_URL = process.env.DB_URL
 
 
