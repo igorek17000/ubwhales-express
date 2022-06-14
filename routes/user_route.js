@@ -14,7 +14,7 @@ UserRoute.get('/', authorizer, (req,res)=>{
       res.send(result)
   })
   .catch(err=>{
-    res.sendStatus(403)
+    res.sendStatus(403) 
   })
 })
 
@@ -28,9 +28,9 @@ UserRoute.post('/login', (req, res)=>{
       })
     } else {
       res.status(401).send({
-        message: 'Something Wrong'
-      })
-    }
+        message: 'Something Wrong / invalid login credentials'
+      }) 
+    } 
   })
 })
 
@@ -39,11 +39,11 @@ UserRoute.post('/register', (req, res)=>{
   
   const Wallet = new WalletModel({
     email: req.body.email, 
-    USDT: 0
+    USDT: 200
   })
   Wallet.save((err, result)=>{
     const User = new UserModel({
-      name:'Rudolph',
+      name:'David',
       email: req.body.email, 
       password: password, 
       role: 'user',

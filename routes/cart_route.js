@@ -107,10 +107,12 @@ CartRoute.get("/", (req, res) => {
 
 function generateCart(props) {
   binance.futuresMarkPrice(props.currency + "USDT").then((coin) => {
+    const  currentDate = new Date().getTime()
+    const startTime = new Date(currentDate + (props.activeTime * 2))
     const Cart = new CartModel({
       currency: props.currency,
       activeTime: props.activeTime,
-      startTime: new Date(),
+      startTime: startTime,
       lockedPrice: coin.indexPrice,
       upPool: 0,
       downPool: 0,
@@ -177,13 +179,17 @@ function generateCart(props) {
               });
             }, props.activeTime * 3);
           }
-        }, props.activeTime);
+        }, props.activeTime * 2);
       }
     });
   });
 }
 
 // One Minute Generate
+generateCart({
+  currency: "BTC",
+  activeTime: OneMinute,
+});
 setInterval(() => {
   generateCart({
     currency: "BTC",

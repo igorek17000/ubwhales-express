@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const cartOptions = {
   toJSON : {
     virtuals : true
-  }
+  } 
 }
 const CartSchema = mongoose.Schema({
   currency: String,

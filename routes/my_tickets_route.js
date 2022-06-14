@@ -12,13 +12,13 @@ const MyTicketsRoute = express.Router()
   })
 }) */
 
-MyTicketsRoute.get('/', (req,res)=>{
+MyTicketsRoute.get('/', authorizer,  (req,res)=>{
         console.log(req.user)
 
         let cnt = 0
         let cnt2 = 0
         
-          ticketModel.find().sort({'_id':-1})
+          ticketModel.find({user:req.user.id}).sort({'_id':-1})
             .exec((err, result)=>{
 
               const tickets = result
