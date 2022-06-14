@@ -20,7 +20,7 @@ const binance = new Binance()
 
 // ========== Declare Variable ========== 
 const app = express()
-const PORT = const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;
 const DB_URL = process.env.DB_URL
 
 
