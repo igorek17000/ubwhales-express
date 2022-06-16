@@ -26,9 +26,7 @@ const DB_URL = process.env.DB_URL
 
 const httpServer = createServer()
 const io = new Server(httpServer,  {
-  cors: {
-    origin: "http://localhost:3000"
-  }
+  //cors: { origin: "http://localhost:3000" }
 });
 
 
