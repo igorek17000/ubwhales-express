@@ -20,7 +20,7 @@ const binance = new Binance()
 
 // ========== Declare Variable ========== 
 const app = express()
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 const DB_URL = process.env.DB_URL
 
 
@@ -36,7 +36,7 @@ app.use((req, res, next)=>{
 })
 
 // ========== Use Middleware ========== 
-//app.use(cors())
+app.use(cors())
 app.use(bodyParser.json())
 app.use('/user', UserRoute)
 app.use('/cart', CartRoute)
@@ -81,7 +81,7 @@ io.on('connection', socket=>{
 
  
  
- const socketServer = httpServer.listen(5555)
+ const socketServer = httpServer.listen(PORT)
 // socketServer.keepAliveTimeout = 61000 * 1000;
 
 const expressServer = app.listen(PORT, ()=>{
