@@ -25,7 +25,7 @@ const DB_URL = process.env.DB_URL
 
 //const http = require('http').Server(app);
 
-const server = http.createServer(app);
+const server = createServer();
 const io = socketIO(server, {transports: ['websocket']});
 
 
