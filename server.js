@@ -23,11 +23,16 @@ const app = express()
 const PORT = process.env.PORT || 5000;
 const DB_URL = process.env.DB_URL
 
+//const http = require('http').Server(app);
 
-const httpServer = createServer()
-const io = new Server(httpServer,  {
-  //cors: { origin: "http://localhost:3000" }
-});
+const server = http.createServer(app);
+const io = socketIO(server, {transports: ['websocket']});
+
+
+//const httpServer = createServer()
+//const io = new Server(httpServer,  {
+//  cors: { origin: "http://localhost:3000" }
+//});
 
 
 app.use((req, res, next)=>{
