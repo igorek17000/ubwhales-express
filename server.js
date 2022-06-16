@@ -32,9 +32,9 @@ const httpServer = createServer()
  // cors: { origin: "*" }
 //});
 
-//const io = new Server (httpServer, {transports: ['websocket']});
+const io = new Server (httpServer, {transports: ['websocket']});
 
-const io = new Server(httpServer);
+//const io = new Server(httpServer);
 
 
 app.use((req, res, next)=>{
@@ -43,7 +43,7 @@ app.use((req, res, next)=>{
 })
 
 // ========== Use Middleware ========== 
-app.use(cors())
+//app.use(cors())
 app.use(bodyParser.json())
 app.use('/user', UserRoute)
 app.use('/cart', CartRoute)
