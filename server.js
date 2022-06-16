@@ -23,18 +23,11 @@ const app = express()
 const PORT = process.env.PORT || 5000;
 const DB_URL = process.env.DB_URL
 
-//const http = require('http').Server(app);
-
-
 
 const httpServer = createServer()
-//const io = new Server(httpServer,  {
- // cors: { origin: "*" }
-//});
-
-const io = new Server (httpServer, {transports: ['websocket']});
-
-//const io = new Server(httpServer);
+const io = new Server(httpServer,  {
+  cors: { origin: "*" }
+});
 
 
 app.use((req, res, next)=>{
@@ -88,7 +81,7 @@ io.on('connection', socket=>{
 
  
  
- const socketServer = httpServer.listen(5000)
+ const socketServer = httpServer.listen(PORT)
 // socketServer.keepAliveTimeout = 61000 * 1000;
 
 const expressServer = app.listen(PORT, ()=>{
