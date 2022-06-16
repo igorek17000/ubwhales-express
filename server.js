@@ -86,7 +86,7 @@ io.on('connection', socket=>{
 
  
  
- const socketServer = httpServer.listen(5000)
+ const socketServer = httpServer.listen(PORT)
 // socketServer.keepAliveTimeout = 61000 * 1000;
 
 const expressServer = app.listen(PORT, ()=>{
