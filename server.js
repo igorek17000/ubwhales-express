@@ -34,7 +34,7 @@ const httpServer = createServer()
 
 //const io = new Server (httpServer, {transports: ['websocket']});
 
-const io = new Server(app);
+const io = new Server(httpServer);
 
 
 app.use((req, res, next)=>{
