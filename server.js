@@ -32,7 +32,9 @@ const httpServer = createServer()
  // cors: { origin: "*" }
 //});
 
-const io = new Server (httpServer, {transports: ['websocket']});
+//const io = new Server (httpServer, {transports: ['websocket']});
+
+const io = Server(app);
 
 
 app.use((req, res, next)=>{
