@@ -25,14 +25,14 @@ const DB_URL = process.env.DB_URL
 
 //const http = require('http').Server(app);
 
-//const server = createServer();
-//const io = new Server (server, {transports: ['websocket']});
 
 
 const httpServer = createServer()
-const io = new Server(httpServer,  {
-  cors: { origin: "*" }
-});
+//const io = new Server(httpServer,  {
+ // cors: { origin: "*" }
+//});
+
+const io = new Server (httpServer, {transports: ['websocket']});
 
 
 app.use((req, res, next)=>{
