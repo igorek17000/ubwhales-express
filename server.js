@@ -20,7 +20,7 @@ const binance = new Binance()
 
 // ========== Declare Variable ========== 
 const app = express()
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 5000;
 const DB_URL = process.env.DB_URL
 
 
@@ -85,7 +85,7 @@ io.on('connection', socket=>{
 
  
  
- const socketServer = httpServer.listen(8080)
+ const socketServer = httpServer.listen(5000)
 // socketServer.keepAliveTimeout = 61000 * 1000;
 
 const expressServer = app.listen(PORT, ()=>{
