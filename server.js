@@ -36,7 +36,7 @@ const io = require("socket.io")(httpServer, {
 
 
 app.use((req, res, next)=>{
-  req.io= io
+ req.io= io
   next()
 })
 
@@ -85,7 +85,7 @@ io.on('connection', socket=>{
 
  
  
- const socketServer = httpServer.listen(PORT)
+ const socketServer = httpServer.listen(4000)
 // socketServer.keepAliveTimeout = 61000 * 1000;
 
 const expressServer = app.listen(PORT, ()=>{
