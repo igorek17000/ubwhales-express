@@ -25,8 +25,12 @@ const DB_URL = process.env.DB_URL
 
 
 const httpServer = createServer()
-const io = new Server(httpServer,  {
-  cors: { origin: "*" }
+
+const io = require("socket.io")(httpServer, {
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"]
+  }
 });
 
 
